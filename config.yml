@@ -1,0 +1,36 @@
+baseURL: https://evanslack.dev/
+languageCode: en-us
+title: evanslack.dev
+theme: "PaperMod"
+
+params:
+  defaultTheme: dark
+  disableThemeToggle: false
+  hideSummary: false
+  hideFooter: true
+
+  homeInfoParams:
+    Title: Hi, I'm Evan
+    Content: >
+        I design products and build applications 
+        
+  socialIcons: 
+    - name: "Github"
+      url: "https://github.com/evanofslack"
+    - name: "Linkedin"
+      url: "https://www.linkedin.com/in/evanslack/"
+
+menu:
+  main:
+    - identifier: home
+      name: home
+      url: /
+      weight: 5
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 10
+    - identifier: projects
+      name: projects
+      url: /projects/
+      weight: 15
