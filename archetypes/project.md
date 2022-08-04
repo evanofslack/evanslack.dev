@@ -12,8 +12,8 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Desc Text"
-showDescription: true
+description: ""
+showDescription: false
 canonicalURL: "https://canonical.url/to/page"
 disableHLJS: true # to disable highlightjs
 disableShare: true
@@ -28,13 +28,13 @@ UseHugoToc: true
 cover:
     image: "" # image path/url
     alt: "Placeholder" # alt text
-    caption: "Analog Picture" # display caption under cover
+    caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
 
-### About
+## About
 
-### Design
+## Design
 
-### Example
+## Example
