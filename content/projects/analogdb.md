@@ -32,7 +32,7 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-
+[view source on Github](https://github.com/evanofslack/analogdb)
 
 ### About
 
@@ -105,4 +105,3 @@ curl https://analogdb.herokuapp.com/latest
 ```
 
 
-[view the source code](https://github.com/evanofslack/analogdb)
