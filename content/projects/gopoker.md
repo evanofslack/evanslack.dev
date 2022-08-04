@@ -12,8 +12,8 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Desc Text"
-showDescription: true
+description: ""
+showDescription: false
 canonicalURL: "https://evanslack.dev/gopoker"
 disableHLJS: true # to disable highlightjs
 disableShare: true
@@ -32,4 +32,12 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
+
+[go-poker.vercel.app](go-poker.vercel.app)
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+[github](https://github.com/evanofslack/go-poker)
+
+## About
+
+GoPoker is 
 

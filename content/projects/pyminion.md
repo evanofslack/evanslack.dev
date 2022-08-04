@@ -12,7 +12,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Dominion game engine, simulator and AI builder"
+description: ""
 showDescription: true
 canonicalURL: "https://evanslack.dev/pyminion"
 disableHLJS: true # to disable highlightjs
@@ -32,13 +32,15 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-[view source on Github](https://github.com/evanofslack/pyminion)
+[pypi.org/project/pyminion](https://pypi.org/project/pyminion/)
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+[github](https://github.com/evanofslack/pyminion)
 
-### About
+## About
 
 Pyminion is a library for executing and analyzing games of [Dominion](https://www.riograndegames.com/games/dominion/). At its core, pyminion implements the rules and logic of Dominion and provides an API to interact with the game engine. In addition, it enables interactive games through the command line and simulation of games between bots.
 
-### Design
+## Design
 
 Pyminion heavily relies on object oriented paradigms with inheritance and composition. 
 
@@ -49,7 +51,7 @@ Currently, reactions to events such as attacks are hardcoded. In the future, it 
 
 
 
-### Example
+## Example
 
 Pyminion requires at least Python 3.8 and can easily be installed through pypi
 
