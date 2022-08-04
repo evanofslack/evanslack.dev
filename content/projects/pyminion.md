@@ -14,7 +14,7 @@ hidemeta: false
 comments: false
 description: "Dominion game engine, simulator and AI builder"
 showDescription: true
-canonicalURL: "https://canonical.url/to/page"
+canonicalURL: "https://evanslack.dev/pyminion"
 disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false
@@ -28,7 +28,7 @@ UseHugoToc: true
 cover:
     image: "" # image path/url
     alt: "Placeholder" # alt text
-    caption: "Analog Picture" # display caption under cover
+    caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
