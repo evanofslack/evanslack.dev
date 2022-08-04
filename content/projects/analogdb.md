@@ -12,7 +12,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "The collection of film photography"
+# description: "The collection of film photography"
 showDescription: true
 canonicalURL: "https://evanslack.dev/analogdb/"
 disableHLJS: true # to disable highlightjs
@@ -32,15 +32,17 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-[view source on Github](https://github.com/evanofslack/analogdb)
+[analogdb.com](https://analogdb.com) 
+&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+[github](https://github.com/evanofslack/analogdb)
 
-### About
+## About
 
-[AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB provides methods for sorting by time or popularity, enables filtering by nsfw, black & white, and exposed sprockets, and allows for querying by film stock, camera model and camera settings. 
+AnalogDB provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB provides methods for sorting by time or popularity, enables filtering by nsfw, black & white, and exposed sprockets, and allows for querying by film stock, camera model and camera settings. 
 
-![AnalogDB Screenshot](/analogdb-screenshot.png)
+![AnalogDB Screenshot](/analogdb-ss.png)
 
-### Design
+## Design
 
 AnalogDB makes use of several technologies and services to enable a full featured product. 
 
@@ -55,7 +57,7 @@ The core backend application is written in [Go](https://go.dev/) and makes use o
 The frontend web application is built with [Next.js](https://github.com/vercel/next.js/), making use of server-side rendering and incremental static regeneration for quick loading pages. [SWR](https://github.com/vercel/swr) is utilized for request caching and revalidation. All styles are built from scratch with [CSS Modules](https://github.com/css-modules/css-modules). The frontend is currently deployed with [Vercel](https://vercel.com/). 
 
 
-### API
+## API
 
 Full documentation for the API: https://analogdb.herokuapp.com/
 
