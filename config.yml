@@ -7,13 +7,20 @@ params:
   defaultTheme: dark
   disableThemeToggle: false
   hideSummary: false
-  hideFooter: true
+  hideFooter: false
 
   homeInfoParams:
     Title: Hi, I'm Evan
     Content: >
-        I design products and build applications 
-        
+        I'm a design engineer focused on building products and applications.
+
+
+        &nbsp;
+
+
+        From responsive web apps and distributed real-time messaging all the way down to embedded firmware and PCB design,
+        I leverage my experience across many domains to deliever efficient solutions.
+
   socialIcons: 
     - name: "Github"
       url: "https://github.com/evanofslack"
