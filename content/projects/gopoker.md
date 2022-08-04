@@ -40,4 +40,5 @@ cover:
 ## About
 
 GoPoker is 
+![GoPoker Screenshot](/gopoker-ss.png)
 
