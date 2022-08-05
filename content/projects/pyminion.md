@@ -24,6 +24,7 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 ShowWordCount: false
 ShowRssButtonInSectionTermList: false
+ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
     image: "" # image path/url

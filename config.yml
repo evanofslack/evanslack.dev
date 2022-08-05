@@ -8,6 +8,7 @@ params:
   disableThemeToggle: false
   hideSummary: false
   hideFooter: false
+  keywords: [test,test2]
 
   homeInfoParams:
     Title: Hi, I'm Evan
