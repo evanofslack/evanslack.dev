@@ -1,6 +1,6 @@
 ---
 title: "GoPoker"
-summary: Real-time multiplayer poker powered by Websockets
+summary: Real-time multiplayer poker application powered by websockets and messaging queues
 
 # weight: 1
 # aliases: ["/first"]

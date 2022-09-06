@@ -1,6 +1,6 @@
 ---
 title: "Pyminion"
-summary: Dominion game engine, simulator and AI builder
+summary: Dominion game engine, simulator and AI builder written in Python
 
 # weight: 1
 # aliases: ["/first"]

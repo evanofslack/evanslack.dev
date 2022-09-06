@@ -1,6 +1,6 @@
 ---
 title: "AnalogDB"
-summary: Public REST API serving thousands of film photographs
+summary: Public REST API and web application exposing a collection of thousands of film photographs
 
 # weight: 1
 # aliases: ["/first"]
