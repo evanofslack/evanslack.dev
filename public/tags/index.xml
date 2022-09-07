@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on evanslack.dev</title>
+    <link>https://evanslack.dev/tags/</link>
+    <description>Recent content in Tags on evanslack.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://evanslack.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CircuitPython</title>
+      <link>https://evanslack.dev/tags/circuitpython/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/circuitpython/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://evanslack.dev/tags/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://evanslack.dev/tags/golang/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Heroku</title>
+      <link>https://evanslack.dev/tags/heroku/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/heroku/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homelab</title>
+      <link>https://evanslack.dev/tags/homelab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/homelab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k3s</title>
+      <link>https://evanslack.dev/tags/k3s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/k3s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCB</title>
+      <link>https://evanslack.dev/tags/pcb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/pcb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pico</title>
+      <link>https://evanslack.dev/tags/pico/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/pico/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Postgres</title>
+      <link>https://evanslack.dev/tags/postgres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/postgres/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pytest</title>
+      <link>https://evanslack.dev/tags/pytest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/pytest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://evanslack.dev/tags/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://evanslack.dev/tags/react/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redis</title>
+      <link>https://evanslack.dev/tags/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SDK</title>
+      <link>https://evanslack.dev/tags/sdk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/sdk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SolidWorks</title>
+      <link>https://evanslack.dev/tags/solidworks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/solidworks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://evanslack.dev/tags/typescript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Websockets</title>
+      <link>https://evanslack.dev/tags/websockets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/tags/websockets/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
