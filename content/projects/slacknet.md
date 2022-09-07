@@ -37,7 +37,7 @@ cover:
 
 ## About
 
-I manage a few physical machines and self-host many services in my homelab. What started as a single raspberry pi running a few docker containers has grown to multiple servers in a highly avaliable proxmox cluster running network storage, LXCs, and a k3s cluster. I also have a pair of raspberry pis running redundant DNS and adblock services.
+I manage a few physical machines and self-host many services in my homelab. What started as a single raspberry pi running a few docker containers has grown to multiple servers in a highly available proxmox cluster running network storage, LXCs, and a k3s cluster. I also have a pair of raspberry pis running redundant DNS and adblock services.
 
 ## Hardware
 
@@ -58,28 +58,66 @@ I currently run 3 main servers in my lab: a host node with lots of memory for mu
 - 2x 14Tb drives in ZFS mirror
 - Proxmox VME
 
-*This machine is primarily a NAS and fileserver, but also runs an LXC for my VPN (tailscale) as well as multiple docker containers for redundant services.*
+*This machine is primarily a NAS and file server, but also runs an LXC for my VPN (Tailscale) as well as multiple docker containers for redundant services.*
 
 **Workstation**
-- Intel core i7 12700kf (8 cores, 16 threads)
+- Intel core i7 12700kf (12 cores, 20 threads)
 - 32 Gb DDR4 3600mHz RAM
-- Nvidia 3800 GPU (12Gb VRAM)
+- Nvidia 3080 GPU (12Gb VRAM)
 - 2Tb NVME SSD
-- Windows 11 w/ WSL (Ubunutu) 
+- Windows 11 w/ WSL (Ubuntu) 
 
 *This machine is my primary development station and also hosts services that require GPU compute.*
 
 ## k3s
 
-My favorite part of the lab is my kubernetes cluster. As I am hosting on bare metal, I decided to go with k3s, a lightweight kubernetes implementation. The highly avaliable cluster runs across 9 virtual machines, with 3 master nodes, 3 worker nodes, and 3 storage nodes dedicated to longhorn storage. 
+My favorite part of the lab is my kubernetes cluster. As I am hosting on bare metal, I decided to go with k3s, a lightweight kubernetes implementation. The highly available cluster runs across 9 virtual machines, with 3 master nodes, 3 worker nodes, and 3 storage nodes dedicated to longhorn storage. 
 
-I have aimed to make setup and tear down of all infastructure as automated as possible. I have bash scripts to create Ubunutu CloudImage templates, use Terraform to provision the virtual machines on Proxmox, and then use Ansible playbooks to install k3s on the nodes. 
+I have aimed to make setup and tear down of all infrastructure as automated as possible. I have bash scripts to create Ubuntu CloudInit templates, use Terraform to provision the virtual machines on Proxmox, and then use Ansible playbooks to install k3s on the nodes. 
 
-The entire cluster is managed declaritivly with Gitops, relying on Flux to sync all state between the cluster and github repository. This makes it incredibly easy redeploy the entire cluster when necessary and also track changes from a single source of truth. 
+The entire cluster is managed declaratively with Gitops, relying on Flux to sync all state between the cluster and github repository. This makes it incredibly easy redeploy the entire cluster when necessary and also track changes from a single source of truth. 
 
-Most of the services I run are either Helm charts or collections of kustomize manifests. Here is a non-comprehensive and likely outdatted list of services and applications I run:
+Most of the services I run are either Helm charts or collections of kustomize manifests. Here is a non-comprehensive and likely outdated list of services and applications I run:
 
-- Cloudnative Postgres Operator
-- MongoDB Community Operator
+**System**
+- [flux](https://toolkit.fluxcd.io/)
+- [kube-vip](https://kube-vip.io/)
+- [reflector](https://github.com/emberstack/kubernetes-reflector)
+- [reloader](https://github.com/stakater/Reloader)
+- [descheduler](https://github.com/kubernetes-sigs/descheduler)
+- [kured](https://github.com/weaveworks/kured)
 
-In addition to open-source applications, I also use my cluster to deploy apps that I am activly developing. It has served as a great learning experience to understand how to write cloudnative applications with microservice patterns, distributed state, and liveliness and readiness probes. 
+**Networking**
+- [calico](https://www.tigera.io/project-calico/)
+- [metallb](https://metallb.universe.tf/)
+- [external-dns](https://github.com/kubernetes-sigs/external-dns)
+- [k8s_gateway](https://github.com/ori-edge/k8s_gateway)
+- [ingress-nginx](https://kubernetes.github.io/ingress-nginx/)
+- [cert-manager](https://cert-manager.io/)
+
+**Monitoring**
+- [prometheus](https://prometheus-operator.dev/)
+- [grafana](https://github.com/grafana/grafana)
+- [loki](https://github.com/grafana/loki)
+- [goldilocks](https://github.com/FairwindsOps/goldilocks)
+- [uptime-kuma](https://github.com/louislam/uptime-kuma)
+
+**Storage**
+- [local-path-provisioner](https://github.com/rancher/local-path-provisioner)
+- [longhorn](https://github.com/longhorn/longhorn)
+
+**Database**
+- [Cloudnative-Postgres-Operator](https://github.com/cloudnative-pg/cloudnative-pg)
+- [MongoDB-Kubernetes-Operator](https://github.com/mongodb/mongodb-kubernetes-operator)
+
+**Development**
+- [Gitea](https://github.com/go-gitea/gitea)
+- [Hakatime](https://github.com/mujx/hakatime)
+- [Wakapi](https://github.com/muety/wakapi)
+
+**Home Automation**
+- [Mosquitto](https://github.com/eclipse/mosquitto)
+- [EMQX](https://github.com/emqx/emqx)
+- [Home-Assistant](https://github.com/home-assistant)
+
+In addition to open source applications, I also use my cluster to deploy apps that I am actively developing. It has served as a great learning experience to understand how to write cloud native applications with microservice patterns, distributed state, and liveliness and readiness probes. 
