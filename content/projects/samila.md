@@ -27,7 +27,7 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-    image: "" # image path/url
+    image: "samila/samila-preview.png" # image path/url
     alt: "Placeholder" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -47,7 +47,7 @@ After playing around with the functionality in a few Jupyter Notebooks, I set ou
 
 [SamilaUI](https://samila-ui.vercel.app) is the result of an interactive React frontend and FastAPI backend that exposes Samila's functionality directly in the browser. 
 
-![Samila-ui Screenshot](/samilaui-ss.png)
+![Samila-ui Screenshot](/samila/samilaui-ss.png)
 
 The [backend](https://github.com/evanofslack/samila-api) is a simple FastAPI application with one [main endpoint](https://samila-api.herokuapp.com/docs#/image/generative_image_image_get) that accepts a variety of query parameters. Each of the query parameters corresponds to an input to Samila's generator API for customizing the image. The endpoint returns a streamed buffer constituting the generated image.
 

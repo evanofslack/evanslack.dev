@@ -39,7 +39,7 @@ cover:
 
 A wise professor once told me "Why buy something when you can build it for twice the price?". In this case, I wanted a small set of switches to control custom inputs on my computer. While there are many macro boards available for purchase, it is much cooler to design and build one from the ground up.
 
-![GoPoker Screenshot](/macropad.gif)
+![GoPoker Screenshot](/macropad/macropad.gif)
 
 ## Hardware
 

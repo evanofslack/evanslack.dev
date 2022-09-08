@@ -26,8 +26,8 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-    image: "" # image path/url
-    alt: "Placeholder" # alt text
+    image: "/analogdb/analogdb-preview.png" # image path/url
+    alt: "analogdb" # alt text
     caption: "" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
@@ -40,7 +40,7 @@ cover:
 
 AnalogDB provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB provides methods for sorting by time or popularity, enables filtering by nsfw, black & white, and exposed sprockets, and allows for querying by film stock, camera model and camera settings. 
 
-![AnalogDB Screenshot](/analogdb-ss.png)
+![AnalogDB Screenshot](/analogdb/analogdb-ss.png)
 
 ## Design
 
