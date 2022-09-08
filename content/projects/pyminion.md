@@ -2,7 +2,7 @@
 title: "Pyminion"
 summary: Dominion game engine, simulator and AI builder written in Python
 
-# weight: 1
+weight: 5
 # aliases: ["/first"]
 tags: ["Python", "Pytest"]
 # author: "Evan Slack"

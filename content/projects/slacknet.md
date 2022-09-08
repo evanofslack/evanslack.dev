@@ -2,7 +2,7 @@
 title: "Slacknet"
 summary: Homelab with kubernetes, virtual machines, containers and more
 
-# weight: 1
+weight: 2
 # aliases: ["/first"]
 tags: ["k3s", "docker", "homelab"]
 # author: "Evan Slack"

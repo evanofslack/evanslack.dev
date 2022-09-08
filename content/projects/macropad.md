@@ -2,7 +2,7 @@
 title: "MacroPad"
 summary: Custom PCB with embedded firmware powered by Raspberry Pi Pico
 
-# weight: 1
+weight: 0
 # aliases: ["/first"]
 tags: ["Pico", "CircuitPython", "PCB", "SolidWorks"]
 # author: "Evan Slack"

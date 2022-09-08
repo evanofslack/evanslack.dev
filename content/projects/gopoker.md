@@ -2,7 +2,7 @@
 title: "GoPoker"
 summary: Real-time multiplayer poker application powered by websockets and messaging queues
 
-# weight: 1
+weight: 2
 # aliases: ["/first"]
 tags: ["Golang", "Redis", "Websockets", "Heroku", "React"]
 # author: "Evan Slack"

@@ -2,7 +2,7 @@
 title: "AnalogDB"
 summary: Public REST API and web application exposing a collection of thousands of film photographs
 
-# weight: 1
+weight: 1
 # aliases: ["/first"]
 tags: ["Golang", "Postgres", "Heroku", "Python", "Docker", "React"]
 # author: "Evan Slack"

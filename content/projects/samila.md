@@ -2,7 +2,7 @@
 title: "Samila"
 summary: Create generative art from random mathematical distributions
 
-# weight: 1
+weight: 3
 # aliases: ["/first"]
 tags: ["python", "typescript", "react"]
 # author: "Evan Slack"
