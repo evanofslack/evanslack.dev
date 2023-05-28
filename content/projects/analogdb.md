@@ -4,7 +4,7 @@ summary: Public REST API and web application exposing a collection of thousands 
 
 weight: 1
 # aliases: ["/first"]
-tags: ["Golang", "Postgres", "Heroku", "Python", "Docker", "React"]
+tags: ["Golang", "Postgres", "Weaviate", "Python", "Docker", "React"]
 # author: "Evan Slack"
 showToc: false
 hideSummary: false
@@ -32,78 +32,107 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
-[analogdb.com](https://analogdb.com) 
+
+[analogdb.com](https://analogdb.com)
 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 [github](https://github.com/evanofslack/analogdb)
 
+
 ## About
 
-AnalogDB provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB provides methods for sorting by time or popularity, enables filtering by nsfw, black & white, and exposed sprockets, and allows for querying by film stock, camera model and camera settings. 
+[AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching across all images.
 
-![AnalogDB Screenshot](/analogdb/analogdb-ss.png)
+![AnalogDB Screenshot](/analogdb/analogdb-ss-2.png)
 
 ## Design
 
-AnalogDB makes use of several technologies and services to enable a full featured product. 
+AnalogDB makes use of several technologies and services to enable a full featured product.
 
-<!-- <img width="681" alt="Screen Shot 2022-07-19 at 8 50 39 PM" src="https://user-images.githubusercontent.com/51209817/179872652-32c019e3-2e3c-4086-84fe-b6e149522e2d.png"> -->
-![AnalogDB Design](https://user-images.githubusercontent.com/51209817/179872652-32c019e3-2e3c-4086-84fe-b6e149522e2d.png#center)
+![AnalogDB Design](/analogdb/analogdb-design.png)
 
+<br/><br/>
 
-Data is scraped from reddit and ingested with [analog-scraper](https://github.com/evanofslack/analog-scraper), a python service. In addition to scraping, this service is responsible for transforming raw images, uploading to [AWS S3](https://aws.amazon.com/s3/), and loading metadata into [Postgres](https://www.postgresql.org/). Images from S3 are served from [CloudFront CDN](https://aws.amazon.com/cloudfront/) for quick and reliable delievery. 
+Data is scraped from reddit and ingested with a python scraping service built on top of [praw](https://github.com/praw-dev/praw). In addition to scraping, this service is responsible for transforming raw images, extraction of keywords and colors, uploading to [AWS S3](https://aws.amazon.com/s3/), and creation of resources through the backend api. Images from S3 are served from [CloudFront CDN](https://aws.amazon.com/cloudfront/) for quick and reliable delievery.
 
-The core backend application is written in [Go](https://go.dev/) and makes use of [Chi](https://github.com/go-chi/chi) as an HTTP router. It exposes handlers that are responsible for filtering incoming requests, establishing connections with Postgres, and returning JSON responses. The Go application and Postgres database are containerized with [Docker](https://www.docker.com/) for reliable development and deployment. The backend is currently hosted on [Heroku](https://www.heroku.com/).   
+The core backend application is written in Go and makes use of [chi](https://github.com/go-chi/chi) as the HTTP router. It exposes handlers that are responsible for parsing authentication headers, filtering incoming requests, querying databases, and returning JSON responses. Upon upload, all images are transformed with the [ResNet-50 CNN](https://datagen.tech/guides/computer-vision/resnet-50/) to create embeddings which are stored in a [Weaviate](https://github.com/weaviate/weaviate) vector database. The backend is packaged as several docker containers and hosted on a VPS.
 
-The frontend web application is built with [Next.js](https://github.com/vercel/next.js/), making use of server-side rendering and incremental static regeneration for quick loading pages. [SWR](https://github.com/vercel/swr) is utilized for request caching and revalidation. All styles are built from scratch with [CSS Modules](https://github.com/css-modules/css-modules). The frontend is currently deployed with [Vercel](https://vercel.com/). 
-
+The frontend web application is built with [Next.js](https://github.com/vercel/next.js/), making use of server-side rendering and incremental static regeneration for quick loading pages. [Zustand](https://github.com/pmndrs/zustand) is utilized for state management. All styles are built from scratch with [CSS Modules](https://github.com/css-modules/css-modules).
 
 ## API
 
-Full documentation for the API: https://analogdb.herokuapp.com/
+Full documentation for the API: <https://api.analogdb.com/>
 
-### Example
+## Example
 
 ```bash
-curl https://analogdb.herokuapp.com/latest
+curl https://api.analogdb.com/posts
 ```
 
 ```yaml
 {
    meta:{
-      total_posts:2420,
-      page_size:10,
-      next_page_id:1640889405,
-      next_page_url:/latest?page_size=10&page_id=1640889405,
+      total_posts:5842,
+      page_size:20,
+      next_page_id:1684684780,
+      next_page_url:"/posts?sort=latest&page_size=20&page_id=1684684780",
    },
-   posts:[
+   posts: [
       {
-       id:2170,
-       images:[
-         {
-           resolution: low,
-           url: https://d3i73ktnzbi69i.cloudfront.net/3eae28ce-2294-437d-81df-87e86cff61c3.jpeg,
-           width: 216,
-           height: 320,
-           },
-           {
-           resolution: medium,
-           url: https://d3i73ktnzbi69i.cloudfront.net/400abc43-b8c5-44cf-a632-c1a849b14ab4.jpeg,
-           width: 519,
-           height: 768,
-           },
-           ...
-         ],
-         title: The San Remo from Central Park [Leica m6, Nokton 35mm f/1.4, Portra 400],
-         author: u/_35mm_,
-         permalink: https://www.reddit.com/r/analog/comments/u26upj/the_san_remo_from_central_park_leica_m6_nokton/,
-         upvotes: 89,
-         nsfw: false,
-         unix_time: 1649790635,
-         sprocket: false,
-      },
-      ...
-   ]
+       id:7378,
+       title: A Forest on the Coast | Portra 400 | Canon 1V | 50mm,
+       author: navazuals,
+       permalink: https://www.reddit.com/r/analog/comments/13p9lme/a_forest_on_the_coast_portra_400_canon_1v_50mm/,
+       upvotes: 89,
+       unix_time: 1684804283,
+       nsfw: false,
+       sprocket: false,
+       images: [
+       {
+         resolution: low,
+         url: https://d3i73ktnzbi69i.cloudfront.net/505e03d0-e6c2-4596-97d2-77d6831e802c.jpeg,
+         width: 477,
+         weight: 720,
+       },
+       {
+         resolution: medium,
+         url: https://d3i73ktnzbi69i.cloudfront.net/0149e7c5-cefe-4cfa-a731-c7696c067d98.jpeg,
+         width: 716,
+         height: 1080,
+       },
+       ...
+       ],
+       colors: [
+       {
+         hex: #5d5933
+         css: darkolivegreen
+         percent: 0.33687689
+       },
+       {
+         hex: #c6c5b1
+         css: silver
+         percent: 0.24639529
+       },
+       ],
+       ...
+       keywords: [
+       {
+         word: portra
+         weight: 0.2
+       },
+       {
+         word: forest
+         weight: 0.2
+       },
+       ...
+      ],
+    },
+    ...
+  ]
 }
 ```
 
+## Deploying
 
+There are prebuilt docker images at `evanofslack/analogdb:latest`
+
+Please see [docker-compose.yaml](https://github.com/evanofslack/analogdb/blob/main/docker-compose.yml) for an example compose deployment with necessary variables and services.

@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>evanslack.dev</title>
     <link>https://evanslack.dev/</link>
     <description>Recent content on evanslack.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://evanslack.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>https://evanslack.dev/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://evanslack.dev/about/</guid>
-      <description>About I&amp;rsquo;m currently a design engineer at Sensata working to create new wireless IoT products. In the past I&amp;rsquo;ve also worked at Solchroma and Precision Nanosystems.
-I graduated from Tufts University in 2021 with a degree in mechanical engineering, where I focused on mechatronics, robotics and product design.
-In my free time I can be found tinkering with virtual machines and networks in my homelab, taking pictures with my Nikon FM2 and struggling to make par on the golf course.</description>
-    </item>
-    
     <item>
       <title>AnalogDB</title>
       <link>https://evanslack.dev/projects/analogdb/</link>
@@ -36,30 +25,21 @@ In my free time I can be found tinkering with virtual machines and networks in m
     </item>
     
     <item>
-      <title>MacroPad</title>
-      <link>https://evanslack.dev/projects/macropad/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://evanslack.dev/projects/macropad/</guid>
-      <description>Custom PCB with embedded firmware powered by Raspberry Pi Pico</description>
-    </item>
-    
-    <item>
-      <title>Pyminion</title>
-      <link>https://evanslack.dev/projects/pyminion/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://evanslack.dev/projects/pyminion/</guid>
-      <description>Dominion game engine, simulator and AI builder written in Python</description>
-    </item>
-    
-    <item>
       <title>Rocket.Chat SDK</title>
       <link>https://evanslack.dev/projects/rocketchat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://evanslack.dev/projects/rocketchat/</guid>
       <description>Improving Rocket.Chat Golang SDK as part of Google Summer of Code</description>
+    </item>
+    
+    <item>
+      <title>Slacknet</title>
+      <link>https://evanslack.dev/projects/slacknet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/projects/slacknet/</guid>
+      <description>Homelab with kubernetes, virtual machines, containers and more</description>
     </item>
     
     <item>
@@ -72,12 +52,32 @@ In my free time I can be found tinkering with virtual machines and networks in m
     </item>
     
     <item>
-      <title>Slacknet</title>
-      <link>https://evanslack.dev/projects/slacknet/</link>
+      <title>Pyminion</title>
+      <link>https://evanslack.dev/projects/pyminion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://evanslack.dev/projects/slacknet/</guid>
-      <description>Homelab with kubernetes, virtual machines, containers and more</description>
+      <guid>https://evanslack.dev/projects/pyminion/</guid>
+      <description>Dominion game engine, simulator and AI builder written in Python</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://evanslack.dev/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/about/</guid>
+      <description>About I&amp;rsquo;m currently a software engineer at Wasabi working on cloud object storage. Previously I&amp;rsquo;ve worked at Sensata, Solchroma and Precision Nanosystems.
+I graduated from Tufts University in 2021 with a degree in mechanical engineering, where I focused on mechatronics, robotics and product design.
+In my free time I can be found tinkering with virtual machines and networks in my homelab, taking pictures with my Nikon FM2 and struggling to make par on the golf course.</description>
+    </item>
+    
+    <item>
+      <title>MacroPad</title>
+      <link>https://evanslack.dev/projects/macropad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://evanslack.dev/projects/macropad/</guid>
+      <description>Custom PCB with embedded firmware powered by Raspberry Pi Pico</description>
     </item>
     
   </channel>
