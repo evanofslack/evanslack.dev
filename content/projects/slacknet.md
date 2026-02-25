@@ -15,7 +15,6 @@ comments: false
 description: ""
 showDescription: true
 canonicalURL: "https://evanslack.dev/slacknet"
-disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false
 searchHidden: false
@@ -27,11 +26,11 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-    image: "slacknet/slacknet-preview.png" # image path/url
-    alt: "Slacknet" # alt text
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+  image: "slacknet/slacknet-preview.png" # image path/url
+  alt: "Slacknet" # alt text
+  caption: "" # display caption under cover
+  relative: false # when using page bundles set this to true
+  hidden: true # only hide on current single page
 ---
 
 [github](https://github.com/evanofslack/slacknet)

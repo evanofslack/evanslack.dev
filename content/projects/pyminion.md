@@ -15,7 +15,6 @@ comments: false
 description: ""
 showDescription: true
 canonicalURL: "https://evanslack.dev/pyminion"
-disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false
 searchHidden: false
@@ -27,12 +26,13 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-    image: "pyminion/pyminion-preview.png" # image path/url
-    alt: "Pyminion" # alt text
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+  image: "pyminion/pyminion-preview.png" # image path/url
+  alt: "Pyminion" # alt text
+  caption: "" # display caption under cover
+  relative: false # when using page bundles set this to true
+  hidden: true # only hide on current single page
 ---
+
 [pypi.org/project/pyminion](https://pypi.org/project/pyminion/)
 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 [github](https://github.com/evanofslack/pyminion)
@@ -43,14 +43,11 @@ Pyminion is a library for executing and analyzing games of [Dominion](https://ww
 
 ## Design
 
-Pyminion heavily relies on object oriented paradigms with inheritance and composition. 
+Pyminion heavily relies on object oriented paradigms with inheritance and composition.
 
-There is a base `player` class from which both `human` and `bot` are derived. The `bot` class in particular is designed to be extendable by users to create new AI variations. All unique cards in the package are derived from the abstract `card` class, from which the `action`, `treasure` and `victory` implementations are created. State is stored in a singleton `game` instance, which is then accessed by players/bots as they take their turns. 
+There is a base `player` class from which both `human` and `bot` are derived. The `bot` class in particular is designed to be extendable by users to create new AI variations. All unique cards in the package are derived from the abstract `card` class, from which the `action`, `treasure` and `victory` implementations are created. State is stored in a singleton `game` instance, which is then accessed by players/bots as they take their turns.
 
-Currently, reactions to events such as attacks are hardcoded. In the future, it would be great to implement an callback system into the game engine which would make the handling of these sort of interrupts more extendable. 
-
-
-
+Currently, reactions to events such as attacks are hardcoded. In the future, it would be great to implement an callback system into the game engine which would make the handling of these sort of interrupts more extendable.
 
 ## Example
 
@@ -60,10 +57,10 @@ Pyminion requires at least Python 3.8 and can easily be installed through pypi
 python3 -m pip install pyminion
 ```
 
-To play an interactive game through the command line against a bot, initialize a human and a bot and assign them as players. Alternatively, games can be created between multiple humans or multiple bots. 
+To play an interactive game through the command line against a bot, initialize a human and a bot and assign them as players. Alternatively, games can be created between multiple humans or multiple bots.
 
 ```python
-from pyminion.expansions.base import base_set 
+from pyminion.expansions.base import base_set
 from pyminion.game import Game
 from pyminion.bots.examples import BigMoney
 from pyminion.players import Human
@@ -79,6 +76,7 @@ game = Game(players=[human, bot], expansions=[base_set])
 game.play()
 
 ```
+
 ### Creating Bots
 
 Defining new bots is relatively straightforward. Inherit from the `Bot` class and implement play and buy strategies in the `action_priority` and `buy_priority` methods respectively.
@@ -115,7 +113,7 @@ class BigMoneySmithy(Bot):
 
 ### Running Simulations
 
-Simulating multiple games is good metric for determining bot performance. To create a simulation, pass a pyminion game instance into the `Simulator` class and set the number of iterations to be run. 
+Simulating multiple games is good metric for determining bot performance. To create a simulation, pass a pyminion game instance into the `Simulator` class and set the number of iterations to be run.
 
 ```python
 from pyminion.bots.examples import BigMoney, BigMoneySmithy
@@ -131,7 +129,8 @@ sim = Simulator(game, iterations=1000)
 sim.run()
 ```
 
-with the following terminal output: 
+with the following terminal output:
+
 ```console
 ~$ python simulation.py
 Simulation of 1000 games

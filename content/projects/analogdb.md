@@ -15,7 +15,6 @@ comments: false
 # description: "The collection of film photography"
 showDescription: true
 canonicalURL: "https://evanslack.dev/analogdb/"
-disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false
 searchHidden: false
@@ -26,17 +25,16 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-    image: "/analogdb/analogdb-preview.png" # image path/url
-    alt: "analogdb" # alt text
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+  image: "/analogdb/analogdb-preview.png" # image path/url
+  alt: "analogdb" # alt text
+  caption: "" # display caption under cover
+  relative: false # when using page bundles set this to true
+  hidden: true # only hide on current single page
 ---
 
 [analogdb.com](https://analogdb.com)
 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 [github](https://github.com/evanofslack/analogdb)
-
 
 ## About
 
