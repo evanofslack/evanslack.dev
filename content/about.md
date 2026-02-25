@@ -1,6 +1,6 @@
 ## About
 
-I'm currently a senior software engineer at [Wasabi](https://wasabi.com) working on cloud object storage. Previously I've worked at [Sensata](https://www.sensata.com/), [Solchroma](https://www.solchroma.com/) and [Precision Nanosystems](https://www.precisionnanosystems.com/).
+I'm currently a senior software engineer at [Wasabi](https://wasabi.com) working on cloud object storage. Previously I've worked at [Sensata](https://www.sensata.com/), [Solchroma](https://www.linkedin.com/company/solchroma-technologies-inc.) and [Precision Nanosystems](https://www.precisionnanosystems.com/).
 
 I graduated from Tufts University in 2021 with a degree in mechanical engineering, where I focused on mechatronics, robotics and product design.
 
