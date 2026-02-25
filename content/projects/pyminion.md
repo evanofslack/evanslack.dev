@@ -3,14 +3,12 @@ title: "Pyminion"
 summary: Dominion game engine, simulator and AI builder written in Python
 
 weight: 5
-# aliases: ["/first"]
 tags: ["Python", "Pytest"]
-# author: "Evan Slack"
 showToc: false
 hideSummary: false
 TocOpen: false
 draft: false
-hidemeta: false
+hidemeta: true
 comments: false
 description: ""
 showDescription: true
@@ -26,11 +24,11 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-  image: "pyminion/pyminion-preview.png" # image path/url
-  alt: "Pyminion" # alt text
+  image: "/pyminion/pyminion-preview.png" # image path/url
+  alt: "pyminion" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
-  hidden: true # only hide on current single page
+  hidden: false # only hide on current single page
 ---
 
 [pypi.org/project/pyminion](https://pypi.org/project/pyminion/)

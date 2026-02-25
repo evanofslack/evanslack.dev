@@ -3,14 +3,12 @@ title: "Samila"
 summary: Create generative art from random mathematical distributions
 
 weight: 3
-# aliases: ["/first"]
 tags: ["python", "typescript", "react"]
-# author: "Evan Slack"
 showToc: false
 hideSummary: false
 TocOpen: false
 draft: false
-hidemeta: false
+hidemeta: true
 comments: false
 description: ""
 showDescription: true
@@ -26,11 +24,11 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-  image: "samila/samila-preview.png" # image path/url
-  alt: "Placeholder" # alt text
+  image: "/samila/samila-preview.png" # image path/url
+  alt: "samila" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
-  hidden: true # only hide on current single page
+  hidden: false # only hide on current single page
 ---
 
 [samila-ui.vercel.app](https://samila-ui.vercel.app)
@@ -52,4 +50,3 @@ After playing around with the functionality in a few Jupyter Notebooks, I set ou
 The [backend](https://github.com/evanofslack/samila-api) is a simple FastAPI application with one [main endpoint](https://samila-api.herokuapp.com/docs#/image/generative_image_image_get) that accepts a variety of query parameters. Each of the query parameters corresponds to an input to Samila's generator API for customizing the image. The endpoint returns a streamed buffer constituting the generated image.
 
 The [frontend](https://github.com/evanofslack/samila-ui) is a Next.js application utilizing typescript and custom hooks to allow the user to easily customize the generator equation, projection, primary and background colors, spot size, and seed. In addition to generating images, users can also easily download their creations.
-

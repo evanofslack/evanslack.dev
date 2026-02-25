@@ -3,14 +3,12 @@ title: "GoPoker"
 summary: Real-time multiplayer poker application powered by websockets and messaging queues
 
 weight: 2
-# aliases: ["/first"]
 tags: ["Golang", "Redis", "Websockets", "Heroku", "React"]
-# author: "Evan Slack"
 showToc: false
 hideSummary: false
 TocOpen: false
 draft: false
-hidemeta: false
+hidemeta: true
 comments: false
 description: ""
 showDescription: false
@@ -25,11 +23,11 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-  image: "gopoker/gopoker-preview.png" # image path/url
-  alt: "Placeholder" # alt text
+  image: "/gopoker/gopoker-preview.png" # image path/url
+  alt: "gopoker" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
-  hidden: true # only hide on current single page
+  hidden: false # only hide on current single page
 ---
 
 [go-poker.vercel.app](https://go-poker.vercel.app)

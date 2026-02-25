@@ -3,17 +3,16 @@ title: "AnalogDB"
 summary: Public REST API and web application exposing a collection of thousands of film photographs
 
 weight: 1
-# aliases: ["/first"]
 tags: ["Golang", "Postgres", "Weaviate", "Python", "Docker", "React"]
-# author: "Evan Slack"
+author: "Evan Slack"
 showToc: false
 hideSummary: false
 TocOpen: false
 draft: false
-hidemeta: false
+hidemeta: true
 comments: false
-# description: "The collection of film photography"
-showDescription: true
+description: "The collection of film photography"
+showDescription: false
 canonicalURL: "https://evanslack.dev/analogdb/"
 disableShare: true
 disableHLJS: false
@@ -29,7 +28,7 @@ cover:
   alt: "analogdb" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
-  hidden: true # only hide on current single page
+  hidden: false # only hide on current single page
 ---
 
 [analogdb.com](https://analogdb.com)

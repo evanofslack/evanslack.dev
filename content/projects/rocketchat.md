@@ -3,14 +3,12 @@ title: "Rocket.Chat SDK"
 summary: Improving Rocket.Chat Golang SDK as part of Google Summer of Code
 
 weight: 2
-# aliases: ["/first"]
 tags: ["Golang", "SDK"]
-# author: "Evan Slack"
 showToc: false
 hideSummary: false
 TocOpen: false
 draft: false
-hidemeta: false
+hidemeta: true
 comments: false
 description: ""
 showDescription: true
@@ -26,11 +24,11 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-  image: "rocketchat/rocketchat-preview.png" # image path/url
-  alt: "Placeholder" # alt text
+  image: "/rocketchat/rocketchat-preview.png"
+  alt: "rocketchat" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
-  hidden: true # only hide on current single page
+  hidden: false # only hide on current single page
 ---
 
 [github](https://github.com/RocketChat/Rocket.Chat.Go.SDK)
@@ -101,4 +99,3 @@ While I've previously made many contributions to a variety of open source projec
 **Small and isolated pull requests are easier to manage** - I had a lot of success with creating feature branches off of main to implement smaller improvements and contributions. This lead to focused pull requests that are easier to review and merge.
 
 **Pace of code review in open source** - sometimes maintainers have limited time to review pull requests. It is therefore important to communicate to ensure contributions are addressing the right problems.
-
