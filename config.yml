@@ -4,6 +4,7 @@ title: evanslack.dev
 theme: "PaperMod"
 
 params:
+  author: "Evan Slack"
   defaultTheme: dark
   disableThemeToggle: false
   hideSummary: false
@@ -42,3 +43,8 @@ menu:
       name: projects
       url: /projects/
       weight: 15
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
