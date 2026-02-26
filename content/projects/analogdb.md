@@ -11,7 +11,6 @@ TocOpen: false
 draft: false
 hidemeta: true
 comments: false
-description: "The collection of film photography"
 showDescription: false
 canonicalURL: "https://evanslack.dev/analogdb/"
 disableShare: true
@@ -39,7 +38,7 @@ cover:
 
 [AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching across all images.
 
-![AnalogDB Screenshot](/analogdb/analogdb-ss-2.png)
+![AnalogDB Screenshot](/analogdb/analogdb-ss.png)
 
 ## Design
 
