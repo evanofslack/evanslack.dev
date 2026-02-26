@@ -2,7 +2,7 @@
 title: "Pyminion"
 summary: Dominion game engine, simulator and AI builder written in Python
 
-weight: 5
+weight: 6
 tags: ["Python", "Pytest"]
 showToc: false
 hideSummary: false

@@ -2,7 +2,7 @@
 title: "Slacknet"
 summary: Homelab with kubernetes, virtual machines, containers and more
 
-weight: 2
+weight: 5
 tags: ["kubernetes", "docker", "homelab", "proxmox"]
 showToc: false
 hideSummary: false

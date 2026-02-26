@@ -2,7 +2,7 @@
 title: "Rocket.Chat SDK"
 summary: Improving Rocket.Chat Golang SDK as part of Google Summer of Code
 
-weight: 2
+weight: 8
 tags: ["Golang", "SDK"]
 showToc: false
 hideSummary: false
