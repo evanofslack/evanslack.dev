@@ -11,7 +11,7 @@ My personal website
 Deployed on cloudflare with pages
 
 ```
-Build command:hugo --minify -b https://evanslack.dev
+Build command:hugo --minify -b $CF_PAGES_URL
 Build output:public
 Root directory:
 Build comments:Enabled
