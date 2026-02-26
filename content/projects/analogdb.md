@@ -3,19 +3,16 @@ title: "AnalogDB"
 summary: Public REST API and web application exposing a collection of thousands of film photographs
 
 weight: 1
-# aliases: ["/first"]
 tags: ["Golang", "Postgres", "Weaviate", "Python", "Docker", "React"]
-# author: "Evan Slack"
+author: "Evan Slack"
 showToc: false
 hideSummary: false
 TocOpen: false
 draft: false
-hidemeta: false
+hidemeta: true
 comments: false
-# description: "The collection of film photography"
-showDescription: true
+showDescription: false
 canonicalURL: "https://evanslack.dev/analogdb/"
-disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false
 searchHidden: false
@@ -26,23 +23,22 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-    image: "/analogdb/analogdb-preview.png" # image path/url
-    alt: "analogdb" # alt text
-    caption: "" # display caption under cover
-    relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+  image: "/analogdb/analogdb-preview.png" # image path/url
+  alt: "analogdb" # alt text
+  caption: "" # display caption under cover
+  relative: false # when using page bundles set this to true
+  hidden: false # only hide on current single page
 ---
 
 [analogdb.com](https://analogdb.com)
 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 [github](https://github.com/evanofslack/analogdb)
 
-
 ## About
 
 [AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching across all images.
 
-![AnalogDB Screenshot](/analogdb/analogdb-ss-2.png)
+![AnalogDB Screenshot](/analogdb/analogdb-ss.png)
 
 ## Design
 

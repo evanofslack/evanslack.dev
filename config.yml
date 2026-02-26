@@ -4,16 +4,17 @@ title: evanslack.dev
 theme: "PaperMod"
 
 params:
+  author: "Evan Slack"
   defaultTheme: dark
   disableThemeToggle: false
   hideSummary: false
   hideFooter: false
-  keywords: [test,test2]
+  keywords: []
 
   homeInfoParams:
     Title: Hi, I'm Evan
     Content: >
-        I'm a design engineer focused on building products and applications.
+        I'm a software engineer focused on building products and applications.
 
 
         &nbsp;
@@ -42,3 +43,8 @@ menu:
       name: projects
       url: /projects/
       weight: 15
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
