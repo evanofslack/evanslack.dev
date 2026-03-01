@@ -30,7 +30,7 @@ cover:
   hidden: false # only hide on current single page
 ---
 
-[go-poker.vercel.app](https://go-poker.vercel.app)
+[poker.evanslack.dev](https://poker.evanslack.dev/)
 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 [github](https://github.com/evanofslack/go-poker)
 
@@ -48,4 +48,4 @@ There are 3 main components that make up the GoPoker application, the frontend c
 
 One distinct challenge that this project presented was handling horizontal scaling in production. During initial development where everything ran on a local computer, all websocket events were handled by a single backend instance. When deploying to Heroku, it became evident that depending on the backend to handle events would not work. Heroku can use multiple dynos to serve the application, so it was possible that seperate instances would handle a single poker table. Without a shared queue, these instances would have no way to interact. Redis was then introduced as a way to communicate between server instances.
 
-Something that is lacking in the current iteration of this project is a persistant datastore. Currently, if the backend server goes down and is has to be recreated, there is no way to recover the state of the previously running games. In the future it would be beneficial to implement a database to store this information. This could potentially be a good usecase for a NoSQL database such as MongoDB or DynamoDB, due to the poker game state already existing in a nested JSON-like structure.
+Something that is lacking in the current iteration of this project is a persistant datastore. Currently, if the backend server goes down and has to be recreated, there is no way to recover the state of the previously running games. In the future it would be beneficial to implement a database to store this information. This could potentially be a good usecase for a NoSQL database such as MongoDB or DynamoDB, due to the poker game state already existing in a nested JSON-like structure. Or just use jsonb column in Postgres :)
