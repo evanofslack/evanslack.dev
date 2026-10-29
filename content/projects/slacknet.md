@@ -37,7 +37,7 @@ cover:
 
 I manage a few physical machines and self-host many services in my homelab. What started as a single raspberry pi running a few docker containers has grown to multiple servers in a highly available proxmox cluster running Ceph, VMs, and a Talos K8s cluster. I also have a pair of raspberry pis running redundant DNS and adblock services.
 
-![Slacknet Hardware](/slacknet/slacknet-hardware.png)
+![Slacknet Hardware](/slacknet/slacknet-hardware.webp)
 
 ## Proxmox Cluster
 

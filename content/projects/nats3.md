@@ -23,7 +23,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-  image: "/nats3/nats3-preview.png"
+  image: "/nats3/nats3-preview.webp"
   alt: "nats3"
   caption: ""
   relative: false
@@ -36,7 +36,7 @@ cover:
 
 [NATS-S3-Connector](https://github.com/evanofslack/nats-s3-connector) bridges NATS Jetstream to S3 object storage, enabling long-term retention and replay of messages. The application provides bidirectional flow, storing messages from NATS to S3 and loading them back when needed. Through store and load jobs, messages are compressed into chunks, tracked with metadata, and made available for replay at any point in time.
 
-![NATS-S3-Connector Screenshot](/nats3/nats3-ui.png)
+![NATS-S3-Connector Screenshot](/nats3/nats3-ui.webp)
 
 ## Design
 

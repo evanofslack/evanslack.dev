@@ -24,7 +24,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-  image: "/balatro-rs/balatro-rs-preview.png"
+  image: "/balatro-rs/balatro-rs-preview.webp"
   alt: "balatro-rs"
   caption: ""
   relative: false

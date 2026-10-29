@@ -24,7 +24,7 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-  image: "/rocketchat/rocketchat-preview.png"
+  image: "/rocketchat/rocketchat-preview.webp"
   alt: "rocketchat" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
