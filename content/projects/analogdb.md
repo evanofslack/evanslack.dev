@@ -23,7 +23,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-  image: "/analogdb/analogdb-preview.png" # image path/url
+  image: "/analogdb/analogdb-preview.webp" # image path/url
   alt: "analogdb" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
@@ -38,13 +38,13 @@ cover:
 
 [AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching across all images.
 
-![AnalogDB Screenshot](/analogdb/analogdb-ss.png)
+![AnalogDB Screenshot](/analogdb/analogdb-ss.webp)
 
 ## Design
 
 AnalogDB makes use of several technologies and services to enable a full featured product.
 
-![AnalogDB Design](/analogdb/analogdb-design.png)
+![AnalogDB Design](/analogdb/analogdb-design.webp)
 
 <br/><br/>
 

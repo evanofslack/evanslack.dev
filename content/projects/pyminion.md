@@ -24,7 +24,7 @@ ShowRssButtonInSectionTermList: false
 ShowCodeCopyButtons: false
 UseHugoToc: true
 cover:
-  image: "/pyminion/pyminion-preview.png" # image path/url
+  image: "/pyminion/pyminion-preview.webp" # image path/url
   alt: "pyminion" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true

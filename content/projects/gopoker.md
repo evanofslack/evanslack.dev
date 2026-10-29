@@ -23,7 +23,7 @@ ShowWordCount: false
 ShowRssButtonInSectionTermList: false
 UseHugoToc: true
 cover:
-  image: "/gopoker/gopoker-preview.png" # image path/url
+  image: "/gopoker/gopoker-preview.webp" # image path/url
   alt: "gopoker" # alt text
   caption: "" # display caption under cover
   relative: false # when using page bundles set this to true
@@ -40,7 +40,7 @@ GoPoker is a real-time multiplayer Texas Hold'em game powered by websockets. Use
 
 &nbsp;
 
-![GoPoker Screenshot](/gopoker/gopoker-ss.png)
+![GoPoker Screenshot](/gopoker/gopoker-ss.webp)
 
 ## Design
 
