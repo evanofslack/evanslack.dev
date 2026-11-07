@@ -14,10 +14,7 @@ params:
   homeInfoParams:
     Title: Hi, I'm Evan
     Content: >
-        I'm a software engineer focused on building products and applications.
-
-
-        &nbsp;
+        I'm a software engineer focused on building backend systems.
 
 
         From responsive web apps, distributed backend services and bare-metal kubernetes all the way down to embedded firmware, PCB design, and 3D-printing,
@@ -43,6 +40,13 @@ menu:
       name: projects
       url: /projects/
       weight: 15
+    - identifier: gallery
+      name: gallery
+      url: /gallery/
+      weight: 20
+
+imaging:
+  resampleFilter: Lanczos
 
 markup:
   goldmark:

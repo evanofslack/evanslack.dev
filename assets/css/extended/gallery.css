@@ -1,0 +1,56 @@
+/* Tune the gallery here */
+.main:has(.gallery) {
+    --main-width: 1200px;
+}
+
+.gallery {
+    /* 320px keeps rows to at most 5 photos at the 1200px page width */
+    --row-height: 320px;
+    --photo-gap: 6px;
+    --album-gap: 80px;
+    --intro-gap: 40px;
+    margin-top: var(--intro-gap);
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        --row-height: 160px;
+        --photo-gap: 4px;
+        --album-gap: 56px;
+        --intro-gap: 24px;
+    }
+}
+
+.gallery-album {
+    margin-bottom: var(--album-gap);
+}
+
+.gallery-album h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+/* Justified rows: width follows each photo's aspect ratio, so rows share a height */
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--photo-gap);
+}
+
+.gallery-row a {
+    flex-grow: var(--r);
+    flex-basis: calc(var(--r) * var(--row-height));
+    box-shadow: none;
+}
+
+.gallery-row img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Absorbs spare space so the last row isn't stretched */
+.gallery-row::after {
+    content: "";
+    flex-grow: 999;
+}
