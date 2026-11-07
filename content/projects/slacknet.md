@@ -12,7 +12,6 @@ hidemeta: true
 comments: false
 description: ""
 showDescription: true
-canonicalURL: "https://evanslack.dev/slacknet"
 disableShare: true
 disableHLJS: false
 searchHidden: false

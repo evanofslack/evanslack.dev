@@ -12,7 +12,6 @@ hidemeta: true
 comments: false
 description: ""
 showDescription: false
-canonicalURL: "https://evanslack.dev/gopoker"
 disableShare: true
 disableHLJS: false
 searchHidden: false

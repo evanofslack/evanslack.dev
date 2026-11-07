@@ -14,7 +14,6 @@ hidemeta: false
 comments: false
 description: ""
 showDescription: false
-canonicalURL: "https://canonical.url/to/page"
 disableHLJS: true # to disable highlightjs
 disableShare: true
 disableHLJS: false

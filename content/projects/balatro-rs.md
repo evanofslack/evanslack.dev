@@ -13,7 +13,6 @@ draft: false
 hidemeta: true
 comments: false
 showDescription: false
-canonicalURL: "https://evanslack.dev/balatro-rs/"
 disableShare: true
 disableHLJS: false
 searchHidden: false
