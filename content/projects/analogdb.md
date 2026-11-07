@@ -1,9 +1,9 @@
 ---
 title: "AnalogDB"
-summary: Public REST API and web application exposing a collection of thousands of film photographs
+summary: Public REST API and web application exposing a collection of tens of thousands of film photographs
 
 weight: 1
-tags: ["Golang", "Postgres", "Weaviate", "Python", "Docker", "React"]
+tags: ["Golang", "Postgres", "Weaviate", "Redis", "Kafka", "ClickHouse", "Python", "Dagster", "Next.js", "Docker"]
 author: "Evan Slack"
 showToc: false
 hideSummary: false
@@ -36,7 +36,7 @@ cover:
 
 ## About
 
-[AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching across all images.
+[AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB tags each image with the camera and film it was shot on, writes a caption describing it, enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching by phrase across all images.
 
 ![AnalogDB Screenshot](/analogdb/analogdb-ss.webp)
 
@@ -48,11 +48,13 @@ AnalogDB makes use of several technologies and services to enable a full feature
 
 <br/><br/>
 
-Data is scraped from reddit and ingested with a python scraping service built on top of [praw](https://github.com/praw-dev/praw). In addition to scraping, this service is responsible for transforming raw images, extraction of keywords and colors, uploading to [AWS S3](https://aws.amazon.com/s3/), and creation of resources through the backend api. Images from S3 are served from [CloudFront CDN](https://aws.amazon.com/cloudfront/) for quick and reliable delievery.
+Data is scraped from reddit with [praw](https://github.com/praw-dev/praw) and ingested through a pipeline orchestrated by [Dagster](https://github.com/dagster-io/dagster). Along the way, an LLM reads each post title to pull out the camera, film and lens, a vision model writes a caption for each image, and keywords and dominant colors are extracted. This pipeline is also responsible for transforming raw images, uploading to [AWS S3](https://aws.amazon.com/s3/), and creation of resources through the backend api. Images from S3 are served from [CloudFront CDN](https://aws.amazon.com/cloudfront/) for quick and reliable delivery.
 
-The core backend application is written in Go and makes use of [chi](https://github.com/go-chi/chi) as the HTTP router. It exposes handlers that are responsible for parsing authentication headers, filtering incoming requests, querying databases, and returning JSON responses. Upon upload, all images are transformed with the [ResNet-50 CNN](https://datagen.tech/guides/computer-vision/resnet-50/) to create embeddings which are stored in a [Weaviate](https://github.com/weaviate/weaviate) vector database. The backend is packaged as several docker containers and hosted on a VPS.
+The core backend application is written in Go and makes use of [chi](https://github.com/go-chi/chi) as the HTTP router. It exposes versioned handlers under `/v1` that are responsible for parsing authentication headers, filtering incoming requests, querying databases, and returning JSON responses. Posts live in PostgreSQL, with [Redis](https://github.com/redis/redis) caching hot responses. Upon upload, all images are embedded with [CLIP](https://github.com/mlfoundations/open_clip) and stored in a [Weaviate](https://github.com/weaviate/weaviate) vector database, which powers both similarity search and searching photos by phrase. The backend is packaged as several docker containers and hosted on a VPS.
 
-The frontend web application is built with [Next.js](https://github.com/vercel/next.js/), making use of server-side rendering and incremental static regeneration for quick loading pages. [Zustand](https://github.com/pmndrs/zustand) is utilized for state management. All styles are built from scratch with [CSS Modules](https://github.com/css-modules/css-modules).
+The frontend web application is built with [Next.js](https://github.com/vercel/next.js/) using the App Router, making use of server-side rendering for quick loading pages. Alongside the gallery there are pages for search and for browsing by film and camera. Components come from [Mantine](https://github.com/mantinedev/mantine) and styles are written with [CSS Modules](https://github.com/css-modules/css-modules).
+
+The backend also publishes analytics events to [Kafka](https://github.com/apache/kafka), where a small Go consumer writes them into [ClickHouse](https://github.com/ClickHouse/ClickHouse). Everything is instrumented with OpenTelemetry and viewed through Grafana.
 
 ## API
 
@@ -129,6 +131,11 @@ curl https://api.analogdb.com/posts
 
 ## Deploying
 
-There are prebuilt docker images at `evanofslack/analogdb:latest`
+There are prebuilt docker images on Docker Hub:
 
-Please see [docker-compose.yaml](https://github.com/evanofslack/analogdb/blob/main/docker-compose.yml) for an example compose deployment with necessary variables and services.
+- `evanofslack/analogdb` for the backend API
+- `evanofslack/analogdb-web` for the frontend
+- `evanofslack/analogdb-dagster` for the scraping pipeline
+- `evanofslack/analogdb-consumer` for the analytics consumer
+
+Please see the `docker-compose.yaml` for each service ([backend](https://github.com/evanofslack/analogdb/blob/main/backend/docker-compose.yaml), [web](https://github.com/evanofslack/analogdb/blob/main/web/docker-compose.yaml), [scrape](https://github.com/evanofslack/analogdb/blob/main/scrape/docker-compose.yaml) and [consumer](https://github.com/evanofslack/analogdb/blob/main/consumer/docker-compose.yaml)) for an example deployment with necessary variables and services.
