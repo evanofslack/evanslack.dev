@@ -12,7 +12,6 @@ draft: false
 hidemeta: true
 comments: false
 showDescription: false
-canonicalURL: "https://evanslack.dev/analogdb/"
 disableShare: true
 disableHLJS: false
 searchHidden: false
