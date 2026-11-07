@@ -6,18 +6,18 @@ hideMeta: true
 build:
   publishResources: false
 albums:
-  - { dir: south-africa,        title: South Africa }
-  - { dir: australia,           title: Australia }
-  - { dir: thailand,            title: Thailand }
-  - { dir: mexico-city,         title: Mexico City }
-  - { dir: vancouver,           title: Vancouver }
+  - { dir: south-africa, title: South Africa }
+  - { dir: australia, title: Australia }
+  - { dir: thailand, title: Thailand }
+  - { dir: mexico-city, title: Mexico City }
   - { dir: northern-california, title: Northern California }
   - { dir: southern-california, title: Southern California }
-  - { dir: new-york,            title: New York }
-  - { dir: baltimore,           title: Baltimore }
-  - { dir: boston,              title: Boston }
-  - { dir: colorado,            title: Colorado }
-  - { dir: connecticut,         title: Connecticut }
-  - { dir: miami,               title: Miami }
-  - { dir: black-and-white,     title: Black & White }
+  - { dir: new-york, title: New York }
+  - { dir: baltimore, title: Baltimore }
+  - { dir: boston, title: Boston }
+  - { dir: vancouver, title: Vancouver }
+  - { dir: colorado, title: Colorado }
+  - { dir: connecticut, title: Connecticut }
+  - { dir: miami, title: Miami }
+  - { dir: black-and-white, title: Black & White }
 ---
