@@ -63,71 +63,75 @@ Full documentation for the API: <https://api.analogdb.com/>
 ## Example
 
 ```bash
-curl https://api.analogdb.com/posts
+curl "https://api.analogdb.com/v1/posts?page_size=1"
 ```
 
-```yaml
+```json
 {
-   meta:{
-      total_posts:5842,
-      page_size:20,
-      next_page_id:1684684780,
-      next_page_url:"/posts?sort=latest&page_size=20&page_id=1684684780",
-   },
-   posts: [
-      {
-       id:7378,
-       title: A Forest on the Coast | Portra 400 | Canon 1V | 50mm,
-       author: navazuals,
-       permalink: https://www.reddit.com/r/analog/comments/13p9lme/a_forest_on_the_coast_portra_400_canon_1v_50mm/,
-       upvotes: 89,
-       unix_time: 1684804283,
-       nsfw: false,
-       sprocket: false,
-       images: [
-       {
-         resolution: low,
-         url: https://d3i73ktnzbi69i.cloudfront.net/505e03d0-e6c2-4596-97d2-77d6831e802c.jpeg,
-         width: 477,
-         weight: 720,
-       },
-       {
-         resolution: medium,
-         url: https://d3i73ktnzbi69i.cloudfront.net/0149e7c5-cefe-4cfa-a731-c7696c067d98.jpeg,
-         width: 716,
-         height: 1080,
-       },
-       ...
-       ],
-       colors: [
-       {
-         hex: #5d5933
-         css: darkolivegreen
-         percent: 0.33687689
-       },
-       {
-         hex: #c6c5b1
-         css: silver
-         percent: 0.24639529
-       },
-       ],
-       ...
-       keywords: [
-       {
-         word: portra
-         weight: 0.2
-       },
-       {
-         word: forest
-         weight: 0.2
-       },
-       ...
+  "meta": {
+    "total_posts": 38246,
+    "page_size": 1,
+    "next_cursor": "eyJzIjoidGltZSIsInYiOjE3OTQwMDM1MzUsImlkIjo1NTQ2OX0",
+    "next_page_url": "/v1/posts?cursor=eyJzIjoidGltZSIsInYiOjE3OTQwMDM1MzUsImlkIjo1NTQ2OX0&page_size=1&sort=time"
+  },
+  "posts": [
+    {
+      "id": 55469,
+      "title": "NYC - Halloween 2026 [ Nikon F2 | 28mm f/2.8 | Cinestill 800T ]",
+      "author": "maxt21",
+      "permalink": "https://www.reddit.com/r/analog/comments/1xppww4/nyc_halloween_2026_nikon_f2_28mm_f28_cinestill/",
+      "description": "Had fun shooting Halloween this year in Brooklyn. Last year I did the same and it was a lot of fun. This year was also a lot of fun",
+      "caption": "A man with yellow face paint and a small anchor decoration on his head smiles at the camera in a subway station.",
+      "score": 108,
+      "nsfw": false,
+      "grayscale": false,
+      "timestamp": 1794003535,
+      "sprocket": false,
+      "camera_make": "nikon",
+      "camera_model": "f2",
+      "film_make": "cinestill",
+      "film_type": "800t",
+      "film_speed": 800,
+      "focal_length": 28,
+      "aperture": "f/2.8",
+      "images": [
+        {
+          "resolution": "low",
+          "url": "https://i.analogdb.com/4044cdd36cc7e86d8065660c-low.jpeg",
+          "width": 720,
+          "height": 720
+        },
+        {
+          "resolution": "medium",
+          "url": "https://i.analogdb.com/4044cdd36cc7e86d8065660c-medium.jpeg",
+          "width": 1080,
+          "height": 1079
+        }
       ],
-    },
-    ...
+      "colors": [
+        {
+          "hex": "#101111",
+          "css": "black",
+          "html": "black",
+          "percent": 0.24719358
+        },
+        {
+          "hex": "#2f2d33",
+          "css": "darkslategray",
+          "html": "black",
+          "percent": 0.22062495
+        }
+      ],
+      "keywords": [
+        { "word": "man", "weight": 1 },
+        { "word": "halloween", "weight": 0.9583 }
+      ]
+    }
   ]
 }
 ```
+
+The response has been truncated here, real posts come with four image sizes, five colors and more keywords.
 
 ## Deploying
 
