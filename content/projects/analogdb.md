@@ -1,9 +1,9 @@
 ---
 title: "AnalogDB"
-summary: Public REST API and web application exposing a collection of thousands of film photographs
+summary: Public REST API and web application exposing a collection of tens of thousands of film photographs
 
 weight: 1
-tags: ["Golang", "Postgres", "Weaviate", "Python", "Docker", "React"]
+tags: ["Golang", "Postgres", "Weaviate", "Redis", "Kafka", "ClickHouse", "Python", "Dagster", "Next.js", "Docker"]
 author: "Evan Slack"
 showToc: false
 hideSummary: false
@@ -36,7 +36,7 @@ cover:
 
 ## About
 
-[AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching across all images.
+[AnalogDB](https://analogdb.com) provides a large collection of curated analog photographs to users through a REST API interface. Beyond just returning photos, AnalogDB tags each image with the camera and film it was shot on, writes a caption describing it, enables discovery of similar images, adds keyword labels, extracts dominant colors, and allows for filtering, sorting and searching by phrase across all images.
 
 ![AnalogDB Screenshot](/analogdb/analogdb-ss.webp)
 
@@ -48,11 +48,13 @@ AnalogDB makes use of several technologies and services to enable a full feature
 
 <br/><br/>
 
-Data is scraped from reddit and ingested with a python scraping service built on top of [praw](https://github.com/praw-dev/praw). In addition to scraping, this service is responsible for transforming raw images, extraction of keywords and colors, uploading to [AWS S3](https://aws.amazon.com/s3/), and creation of resources through the backend api. Images from S3 are served from [CloudFront CDN](https://aws.amazon.com/cloudfront/) for quick and reliable delievery.
+Data is scraped from reddit with [praw](https://github.com/praw-dev/praw) and ingested through a pipeline orchestrated by [Dagster](https://github.com/dagster-io/dagster). Along the way, an LLM reads each post title to pull out the camera, film and lens, a vision model writes a caption for each image, and keywords and dominant colors are extracted. This pipeline is also responsible for transforming raw images, uploading to [AWS S3](https://aws.amazon.com/s3/), and creation of resources through the backend api. Images from S3 are served from [CloudFront CDN](https://aws.amazon.com/cloudfront/) for quick and reliable delivery.
 
-The core backend application is written in Go and makes use of [chi](https://github.com/go-chi/chi) as the HTTP router. It exposes handlers that are responsible for parsing authentication headers, filtering incoming requests, querying databases, and returning JSON responses. Upon upload, all images are transformed with the [ResNet-50 CNN](https://datagen.tech/guides/computer-vision/resnet-50/) to create embeddings which are stored in a [Weaviate](https://github.com/weaviate/weaviate) vector database. The backend is packaged as several docker containers and hosted on a VPS.
+The core backend application is written in Go and makes use of [chi](https://github.com/go-chi/chi) as the HTTP router. It exposes versioned handlers under `/v1` that are responsible for parsing authentication headers, filtering incoming requests, querying databases, and returning JSON responses. Posts live in PostgreSQL, with [Redis](https://github.com/redis/redis) caching hot responses. Upon upload, all images are embedded with [CLIP](https://github.com/mlfoundations/open_clip) and stored in a [Weaviate](https://github.com/weaviate/weaviate) vector database, which powers both similarity search and searching photos by phrase. The backend is packaged as several docker containers and hosted on a VPS.
 
-The frontend web application is built with [Next.js](https://github.com/vercel/next.js/), making use of server-side rendering and incremental static regeneration for quick loading pages. [Zustand](https://github.com/pmndrs/zustand) is utilized for state management. All styles are built from scratch with [CSS Modules](https://github.com/css-modules/css-modules).
+The frontend web application is built with [Next.js](https://github.com/vercel/next.js/) using the App Router, making use of server-side rendering for quick loading pages. Alongside the gallery there are pages for search and for browsing by film and camera. Components come from [Mantine](https://github.com/mantinedev/mantine) and styles are written with [CSS Modules](https://github.com/css-modules/css-modules).
+
+The backend also publishes analytics events to [Kafka](https://github.com/apache/kafka), where a small Go consumer writes them into [ClickHouse](https://github.com/ClickHouse/ClickHouse). Everything is instrumented with OpenTelemetry and viewed through Grafana.
 
 ## API
 
@@ -61,74 +63,83 @@ Full documentation for the API: <https://api.analogdb.com/>
 ## Example
 
 ```bash
-curl https://api.analogdb.com/posts
+curl "https://api.analogdb.com/v1/posts?page_size=1"
 ```
 
-```yaml
+```json
 {
-   meta:{
-      total_posts:5842,
-      page_size:20,
-      next_page_id:1684684780,
-      next_page_url:"/posts?sort=latest&page_size=20&page_id=1684684780",
-   },
-   posts: [
-      {
-       id:7378,
-       title: A Forest on the Coast | Portra 400 | Canon 1V | 50mm,
-       author: navazuals,
-       permalink: https://www.reddit.com/r/analog/comments/13p9lme/a_forest_on_the_coast_portra_400_canon_1v_50mm/,
-       upvotes: 89,
-       unix_time: 1684804283,
-       nsfw: false,
-       sprocket: false,
-       images: [
-       {
-         resolution: low,
-         url: https://d3i73ktnzbi69i.cloudfront.net/505e03d0-e6c2-4596-97d2-77d6831e802c.jpeg,
-         width: 477,
-         weight: 720,
-       },
-       {
-         resolution: medium,
-         url: https://d3i73ktnzbi69i.cloudfront.net/0149e7c5-cefe-4cfa-a731-c7696c067d98.jpeg,
-         width: 716,
-         height: 1080,
-       },
-       ...
-       ],
-       colors: [
-       {
-         hex: #5d5933
-         css: darkolivegreen
-         percent: 0.33687689
-       },
-       {
-         hex: #c6c5b1
-         css: silver
-         percent: 0.24639529
-       },
-       ],
-       ...
-       keywords: [
-       {
-         word: portra
-         weight: 0.2
-       },
-       {
-         word: forest
-         weight: 0.2
-       },
-       ...
+  "meta": {
+    "total_posts": 38246,
+    "page_size": 1,
+    "next_cursor": "eyJzIjoidGltZSIsInYiOjE3OTQwMDM1MzUsImlkIjo1NTQ2OX0",
+    "next_page_url": "/v1/posts?cursor=eyJzIjoidGltZSIsInYiOjE3OTQwMDM1MzUsImlkIjo1NTQ2OX0&page_size=1&sort=time"
+  },
+  "posts": [
+    {
+      "id": 55469,
+      "title": "NYC - Halloween 2026 [ Nikon F2 | 28mm f/2.8 | Cinestill 800T ]",
+      "author": "maxt21",
+      "permalink": "https://www.reddit.com/r/analog/comments/1xppww4/nyc_halloween_2026_nikon_f2_28mm_f28_cinestill/",
+      "description": "Had fun shooting Halloween this year in Brooklyn. Last year I did the same and it was a lot of fun. This year was also a lot of fun",
+      "caption": "A man with yellow face paint and a small anchor decoration on his head smiles at the camera in a subway station.",
+      "score": 108,
+      "nsfw": false,
+      "grayscale": false,
+      "timestamp": 1794003535,
+      "sprocket": false,
+      "camera_make": "nikon",
+      "camera_model": "f2",
+      "film_make": "cinestill",
+      "film_type": "800t",
+      "film_speed": 800,
+      "focal_length": 28,
+      "aperture": "f/2.8",
+      "images": [
+        {
+          "resolution": "low",
+          "url": "https://i.analogdb.com/4044cdd36cc7e86d8065660c-low.jpeg",
+          "width": 720,
+          "height": 720
+        },
+        {
+          "resolution": "medium",
+          "url": "https://i.analogdb.com/4044cdd36cc7e86d8065660c-medium.jpeg",
+          "width": 1080,
+          "height": 1079
+        }
       ],
-    },
-    ...
+      "colors": [
+        {
+          "hex": "#101111",
+          "css": "black",
+          "html": "black",
+          "percent": 0.24719358
+        },
+        {
+          "hex": "#2f2d33",
+          "css": "darkslategray",
+          "html": "black",
+          "percent": 0.22062495
+        }
+      ],
+      "keywords": [
+        { "word": "man", "weight": 1 },
+        { "word": "halloween", "weight": 0.9583 }
+      ]
+    }
   ]
 }
 ```
 
+The response has been truncated here, real posts come with four image sizes, five colors and more keywords.
+
 ## Deploying
 
-There are prebuilt docker images at `evanofslack/analogdb:latest`
+There are prebuilt docker images on Docker Hub:
 
-Please see [docker-compose.yaml](https://github.com/evanofslack/analogdb/blob/main/docker-compose.yml) for an example compose deployment with necessary variables and services.
+- `evanofslack/analogdb` for the backend API
+- `evanofslack/analogdb-web` for the frontend
+- `evanofslack/analogdb-dagster` for the scraping pipeline
+- `evanofslack/analogdb-consumer` for the analytics consumer
+
+Please see the `docker-compose.yaml` for each service ([backend](https://github.com/evanofslack/analogdb/blob/main/backend/docker-compose.yaml), [web](https://github.com/evanofslack/analogdb/blob/main/web/docker-compose.yaml), [scrape](https://github.com/evanofslack/analogdb/blob/main/scrape/docker-compose.yaml) and [consumer](https://github.com/evanofslack/analogdb/blob/main/consumer/docker-compose.yaml)) for an example deployment with necessary variables and services.
