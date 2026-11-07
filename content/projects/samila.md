@@ -2,7 +2,7 @@
 title: "Samila"
 summary: Create generative art from random mathematical distributions
 
-weight: 7
+weight: 8
 tags: ["python", "typescript", "react"]
 showToc: false
 hideSummary: false
