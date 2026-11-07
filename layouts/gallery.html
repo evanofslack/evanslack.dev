@@ -1,0 +1,45 @@
+{{- define "main" }}
+{{- $page := . }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}
+  <div class="post-description">{{ . }}</div>
+  {{- end }}
+</header>
+
+<div class="gallery">
+  {{- range .Params.albums }}
+  {{- $title := .title }}
+  {{- $photos := $page.Resources.Match (printf "%s/*" .dir) }}
+  {{- if not $photos }}
+  {{- warnf "gallery: no images found in content/gallery/%s" .dir }}
+  {{- else }}
+  <section class="gallery-album">
+    <h2>{{ $title }}</h2>
+    <div class="gallery-row">
+      {{- range sort $photos "Name" }}
+      {{- $grid := .Fit "800x800 webp q80" }}
+      {{- $large := .Fit "1600x1600 webp q85" }}
+      {{- $ratio := div (float $grid.Width) $grid.Height }}
+      <a href="{{ $large.RelPermalink }}" style="--r: {{ printf "%.4f" $ratio | safeCSS }}">
+        <img src="{{ $grid.RelPermalink }}" width="{{ $grid.Width }}" height="{{ $grid.Height }}" loading="lazy" alt="{{ $title }}">
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+  {{- end }}
+</div>
+<script>
+  /* Shuffle photos within each location on every page load (Fisher-Yates).
+     Runs inline right after the markup, before first paint. Without JS, filename order is used. */
+  document.querySelectorAll(".gallery-row").forEach(function (row) {
+    var items = Array.prototype.slice.call(row.children);
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = items[i]; items[i] = items[j]; items[j] = t;
+    }
+    items.forEach(function (el) { row.appendChild(el); });
+  });
+</script>
+{{- end }}

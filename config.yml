@@ -43,6 +43,10 @@ menu:
       name: projects
       url: /projects/
       weight: 15
+    - identifier: gallery
+      name: gallery
+      url: /gallery/
+      weight: 20
 
 markup:
   goldmark:
