@@ -13,11 +13,11 @@ albums:
   - { dir: vancouver,           title: Vancouver }
   - { dir: northern-california, title: Northern California }
   - { dir: southern-california, title: Southern California }
-  - { dir: colorado,            title: Colorado }
-  - { dir: boston,              title: Boston }
-  - { dir: connecticut,         title: Connecticut }
   - { dir: new-york,            title: New York }
   - { dir: baltimore,           title: Baltimore }
+  - { dir: boston,              title: Boston }
+  - { dir: colorado,            title: Colorado }
+  - { dir: connecticut,         title: Connecticut }
   - { dir: miami,               title: Miami }
   - { dir: black-and-white,     title: Black & White }
 ---
