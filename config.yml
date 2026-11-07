@@ -48,6 +48,9 @@ menu:
       url: /gallery/
       weight: 20
 
+imaging:
+  resampleFilter: Lanczos
+
 markup:
   goldmark:
     renderer:

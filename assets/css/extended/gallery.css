@@ -4,16 +4,20 @@
 }
 
 .gallery {
-    --row-height: 280px;
+    /* 320px keeps rows to at most 5 photos at the 1200px page width */
+    --row-height: 320px;
     --photo-gap: 6px;
-    --album-gap: 48px;
+    --album-gap: 80px;
+    --intro-gap: 40px;
+    margin-top: var(--intro-gap);
 }
 
 @media (max-width: 600px) {
     .gallery {
         --row-height: 160px;
         --photo-gap: 4px;
-        --album-gap: 32px;
+        --album-gap: 56px;
+        --intro-gap: 24px;
     }
 }
 
