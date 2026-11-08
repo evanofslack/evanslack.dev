@@ -12,7 +12,6 @@ draft: false
 hidemeta: true
 comments: false
 showDescription: false
-canonicalURL: "https://evanslack.dev/pastebnn/"
 disableShare: true
 disableHLJS: false
 searchHidden: false
