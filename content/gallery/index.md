@@ -21,3 +21,5 @@ albums:
   - { dir: miami, title: Miami }
   - { dir: black-and-white, title: Black & White }
 ---
+
+Want a full-resolution copy of any of these? [Email me](mailto:evan.slack@outlook.com).

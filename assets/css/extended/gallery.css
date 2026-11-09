@@ -54,3 +54,12 @@
     content: "";
     flex-grow: 999;
 }
+
+/* contact line under the gallery description */
+.gallery-note {
+  margin-top: 4px;
+}
+
+.gallery-note p {
+  margin: 0;
+}
