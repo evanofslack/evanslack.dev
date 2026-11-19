@@ -1,0 +1,9 @@
+{{- /* Small photo floated beside the text. Usage: {{< side-photo src="me.jpg" alt="..." >}}
+       src is a page-bundle resource; it's re-encoded to webp at 2x the displayed width */}}
+{{- $src := .Get "src" }}
+{{- with .Page.Resources.Get $src }}
+{{- $img := .Resize "400x webp q85" }}
+<img class="side-photo" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Get "alt" }}">
+{{- else }}
+{{- errorf "side-photo: resource %q not found in %s" $src .Page.File.Path }}
+{{- end }}

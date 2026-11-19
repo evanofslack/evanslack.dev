@@ -55,6 +55,38 @@
     flex-grow: 999;
 }
 
+/* header: text on the left, small photo right beside it. Same 720px centered column as
+   the other pages (PaperMod's default --main-width; can't use the var here since the
+   gallery raises it to 1200px), so the title lines up with home/about/projects */
+.gallery-intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 720px;
+}
+
+.gallery-intro-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.gallery-intro-photo {
+    width: 260px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .gallery-intro {
+        gap: 16px;
+    }
+
+    .gallery-intro-photo {
+        width: 158px;
+    }
+}
+
 /* contact line under the gallery description */
 .gallery-note {
   margin-top: 4px;

@@ -1,0 +1,15 @@
+/* small photo floated to the right of page text (side-photo shortcode) */
+.post-content .side-photo {
+    float: right;
+    width: 200px;
+    height: auto;
+    margin: 6px 0 16px 32px;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .post-content .side-photo {
+        width: 120px;
+        margin-left: 16px;
+    }
+}
