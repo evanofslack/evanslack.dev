@@ -10,6 +10,8 @@ params:
   hideSummary: false
   hideFooter: false
   keywords: []
+  # fallback link-preview image for pages without their own (og:image / twitter:image)
+  images: ["og-default.png"]
 
   homeInfoParams:
     Title: Hi, I'm Evan

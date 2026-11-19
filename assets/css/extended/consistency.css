@@ -1,0 +1,33 @@
+/* Make home, list, article and gallery pages share one look.
+   PaperMod styles each page type differently (home intro 16px dim grey, list summaries
+   14px, articles 18px, list pages get a grey background in light mode); this evens them out
+   to the article style: 40px titles, 18px body text in the --content color. */
+
+/* page titles: home intro was 34px */
+.first-entry .entry-header h1 {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+/* body text: home intro and list summaries */
+.entry-content,
+.first-entry .entry-content {
+    font-size: 18px;
+    color: var(--content);
+}
+
+/* gallery/list page descriptions were the brighter heading color */
+.post-description {
+    color: var(--content);
+}
+
+/* light mode: use the off-white the theme gave list pages (home, projects) on every page,
+   instead of pure white on some. Dark mode sets its own --theme, so it's unaffected */
+:root:not([data-theme="dark"]) {
+    --theme: rgb(245, 245, 245);
+    --code-bg: rgb(235, 235, 235); /* keep inline code visible against the new background */
+}
+
+.list {
+    background: var(--theme);
+}

@@ -1,4 +1,11 @@
-## About
+---
+title: About
+hideMeta: true
+build:
+  publishResources: false
+---
+
+{{< side-photo src="me.jpg" alt="Evan waving on a beach" >}}
 
 I'm currently a software engineer at [Runpod](https://www.runpod.io/) building the AI developer cloud. Previously I spent four years as a software engineer at [Wasabi](https://wasabi.com) working on cloud object storage. Before that, I worked at [Sensata](https://www.sensata.com/), [Solchroma](https://www.linkedin.com/company/solchroma-technologies-inc.) and [Precision Nanosystems](https://www.precisionnanosystems.com/).
 

@@ -1,12 +1,19 @@
 {{- define "main" }}
 {{- $page := . }}
-<header class="page-header">
-  <h1>{{ .Title }}</h1>
-  {{- with .Description }}
-  <div class="post-description">{{ . }}</div>
-  {{- end }}
-  {{- with .Content }}
-  <div class="post-description gallery-note">{{ . }}</div>
+<header class="page-header gallery-intro">
+  <div class="gallery-intro-text">
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}
+    <div class="post-description">{{ . }}</div>
+    {{- end }}
+    {{- with .Content }}
+    <div class="post-description gallery-note">{{ . }}</div>
+    {{- end }}
+  </div>
+  {{- /* small intro photo; the original is also the page's link-preview image (images: in front matter) */}}
+  {{- with .Resources.Get "me.jpg" }}
+  {{- $thumb := .Fit "560x560 webp q85" }}
+  <img class="gallery-intro-photo" src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="Evan taking a photo with a Nikon FM2">
   {{- end }}
 </header>
 

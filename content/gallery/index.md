@@ -3,6 +3,7 @@ title: Gallery
 description: Film pictures I've taken on my Nikon FM2. Various film stocks, mostly Portra 400 and Kodak Gold.
 layout: gallery
 hideMeta: true
+images: ["me.jpg"]
 build:
   publishResources: false
 albums:
